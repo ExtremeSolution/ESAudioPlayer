@@ -42,10 +42,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8971408E0CEBC2868981F7B7 /* Pods_ESAudioPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESAudioPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		94E6B5E923865258DEC8AF25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		94E6B5E923865258DEC8AF25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9FBB6193659DC4B831ADE395 /* Pods_ESAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESAudioPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B28365A37611DA64EB1EBABC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		ECD86DE35E23905FCD3DFBA7 /* ESAudioPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ESAudioPlayer.podspec; path = ../ESAudioPlayer.podspec; sourceTree = "<group>"; };
+		B28365A37611DA64EB1EBABC /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		ECD86DE35E23905FCD3DFBA7 /* ESAudioPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ESAudioPlayer.podspec; path = ../ESAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9BF259FC2FD033C3A026A27 /* Pods-ESAudioPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESAudioPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-ESAudioPlayer_Example/Pods-ESAudioPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,7 +77,6 @@
 				32F5748F670E4C2D4BDBFD52 /* Pods-ESAudioPlayer_Tests.debug.xcconfig */,
 				5D58AC019063C6A697953CD6 /* Pods-ESAudioPlayer_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -227,6 +226,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);

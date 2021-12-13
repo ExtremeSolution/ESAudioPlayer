@@ -1,6 +1,5 @@
 # ESAudioPlayer
 
-[![CI Status](https://img.shields.io/travis/Mario Mouris/ESAudioPlayer.svg?style=flat)](https://travis-ci.org/Mario Mouris/ESAudioPlayer)
 [![Version](https://img.shields.io/cocoapods/v/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 [![License](https://img.shields.io/cocoapods/l/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)

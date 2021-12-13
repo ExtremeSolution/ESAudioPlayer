@@ -1,0 +1,16 @@
+PODS:
+  - ESAudioPlayer (0.1.0)
+
+DEPENDENCIES:
+  - ESAudioPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  ESAudioPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  ESAudioPlayer: f4cc07c2a5f400666279f763d7afd8205ab1d2b0
+
+PODFILE CHECKSUM: 6e5d74004025342e6ce21726bed12c85ff61cc6a
+
+COCOAPODS: 1.10.1
