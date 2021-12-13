@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'ESAudioPlayer_Example' do
+  pod 'ESAudioPlayer', :path => '../'
+
+  target 'ESAudioPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
