@@ -26,7 +26,7 @@ pod 'ESAudioPlayer'
 
 ## Author
 
-Mario Mouris, marioamgad9@gmail.com
+Mario Mouris, mario.mouris@extremesolution.com
 
 ## License
 
