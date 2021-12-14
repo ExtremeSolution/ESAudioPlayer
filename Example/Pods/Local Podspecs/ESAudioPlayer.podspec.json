@@ -1,9 +1,9 @@
 {
   "name": "ESAudioPlayer",
   "version": "0.1.0",
-  "summary": "A short description of ESAudioPlayer.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/Mario Mouris/ESAudioPlayer",
+  "summary": "An extensible audio player for iOS",
+  "description": "ESAudioPlayer is an audioplayer for iOS. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.",
+  "homepage": "https://github.com/ExtremeSolution/ESAudioPlayer",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,23 @@
     "Mario Mouris": "marioamgad9@gmail.com"
   },
   "source": {
-    "git": "https://github.com/Mario Mouris/ESAudioPlayer.git",
+    "git": "https://github.com/ExtremeSolution/ESAudioPlayer.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://extremesolution.com/",
   "platforms": {
-    "ios": "9.0"
+    "ios": "13.0"
   },
-  "source_files": "ESAudioPlayer/Classes/**/*"
+  "swift_versions": "5.0",
+  "source_files": "ESAudioPlayer/Classes/**/*",
+  "frameworks": "AVFoundation",
+  "dependencies": {
+    "RxSwift": [
+      "6.2.0"
+    ],
+    "RxCocoa": [
+      "6.2.0"
+    ]
+  },
+  "swift_version": "5.0"
 }

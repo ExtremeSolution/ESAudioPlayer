@@ -1,15 +1,32 @@
 PODS:
-  - ESAudioPlayer (0.1.0)
+  - ESAudioPlayer (0.1.0):
+    - RxCocoa (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxCocoa (6.2.0):
+    - RxRelay (= 6.2.0)
+    - RxSwift (= 6.2.0)
+  - RxRelay (6.2.0):
+    - RxSwift (= 6.2.0)
+  - RxSwift (6.2.0)
 
 DEPENDENCIES:
   - ESAudioPlayer (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - RxCocoa
+    - RxRelay
+    - RxSwift
 
 EXTERNAL SOURCES:
   ESAudioPlayer:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ESAudioPlayer: f4cc07c2a5f400666279f763d7afd8205ab1d2b0
+  ESAudioPlayer: 9a745023d7c294c87c1c5cf37ffa0960a084fbdd
+  RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
+  RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
+  RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
 PODFILE CHECKSUM: 6e5d74004025342e6ce21726bed12c85ff61cc6a
 
