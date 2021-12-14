@@ -1,8 +1,10 @@
-# ESAudioPlayer
+# ESAudioPlayer: A reactive audio player for iOS
 
 [![Version](https://img.shields.io/cocoapods/v/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 [![License](https://img.shields.io/cocoapods/l/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
+
+ESAudioPlayer is a reactive audio player for iOS using RxSwift. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.
 
 <img src="assets/screenshot-1.png" width="25%" /> <img src="assets/screenshot-2.png" width="25%" />
 
