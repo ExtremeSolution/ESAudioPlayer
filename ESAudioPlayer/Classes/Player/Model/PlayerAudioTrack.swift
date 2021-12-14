@@ -22,4 +22,19 @@ public struct PlayerAudioTrack: Equatable {
     public var combinedArtistsString: String {
         artists.reduce("", { if $0 == "" { return $1.name } else { return $0 + ", " + ($1.name) } })
     }
+    
+    // MARK: - Initializer
+    public init(
+        id: Int,
+        name: String,
+        imageURL: String,
+        fileURL: String,
+        artists: [PlayerArtist]
+    ) {
+        self.id = id
+        self.name = name
+        self.imageURL = imageURL
+        self.fileURL = fileURL
+        self.artists = artists
+    }
 }

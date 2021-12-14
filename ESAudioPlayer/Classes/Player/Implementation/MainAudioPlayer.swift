@@ -9,18 +9,18 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-class MainAudioPlayer: NSObject, AudioPlayer {
+public class MainAudioPlayer: NSObject, AudioPlayer {
     
     // MARK: - Properties
     // Public properties
-    let currentTrack = BehaviorRelay<PlayerAudioTrack?>(value: nil)
-    let queue = BehaviorRelay<[PlayerAudioTrack]>(value: [])
-    let state = BehaviorRelay<AudioPlayerState>(value: .stopped)
-    let currentTime = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
-    let trackDuration = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
-    let currentSpeed = BehaviorRelay<AudioPlayerSpeed>(value: .normal)
-    let isRepeatOn = BehaviorRelay<Bool>(value: false)
-    let isShuffleOn = BehaviorRelay<Bool>(value: false)
+    public let currentTrack = BehaviorRelay<PlayerAudioTrack?>(value: nil)
+    public let queue = BehaviorRelay<[PlayerAudioTrack]>(value: [])
+    public let state = BehaviorRelay<AudioPlayerState>(value: .stopped)
+    public let currentTime = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
+    public let trackDuration = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
+    public let currentSpeed = BehaviorRelay<AudioPlayerSpeed>(value: .normal)
+    public let isRepeatOn = BehaviorRelay<Bool>(value: false)
+    public let isShuffleOn = BehaviorRelay<Bool>(value: false)
     
     // Private properties
     var currentPlayer: AVPlayer?
@@ -34,7 +34,7 @@ class MainAudioPlayer: NSObject, AudioPlayer {
     var loadingAsset: AVAsset?
     
     // MARK: - Initializer
-    static let shared = MainAudioPlayer()
+    public static let shared = MainAudioPlayer()
     private override init() {
         super.init()
         
@@ -50,7 +50,7 @@ class MainAudioPlayer: NSObject, AudioPlayer {
 
 // MARK: - Track Management Methods
 extension MainAudioPlayer {
-    func play(track: PlayerAudioTrack) {
+    public func play(track: PlayerAudioTrack) {
         // Make sure the track is not already playing
         guard track != currentTrack.value else { return }
         
@@ -74,7 +74,7 @@ extension MainAudioPlayer {
         }
     }
     
-    func play(list: [PlayerAudioTrack]) {
+    public func play(list: [PlayerAudioTrack]) {
         guard !list.isEmpty else { return }
         
         // Reset playback speed
@@ -88,18 +88,18 @@ extension MainAudioPlayer {
         initializeAVPlayerAndStartPlaying(with: list.first)
     }
     
-    func pause() {
+    public func pause() {
         currentPlayer?.pause()
         state.accept(.paused)
     }
     
-    func resume() {
+    public func resume() {
         guard state.value == . paused || state.value == .stopped else { return }
         currentPlayer?.playImmediately(atRate: currentSpeed.value.rawValue)
         state.accept(.playing)
     }
     
-    func next() {
+    public func next() {
         // Get next track if available
         guard let nextTrack = nextTrackInQueue else {
             currentPlayer?.seek(to: CMTimeMake(value: 0, timescale: 1))
@@ -115,7 +115,7 @@ extension MainAudioPlayer {
         initializeAVPlayerAndStartPlaying(with: nextTrack)
     }
     
-    func previous() {
+    public func previous() {
         // Play from start if it's more than 5 seconds in
         guard currentPlayer?.currentTime().seconds ?? 0 < 5 else {
             currentPlayer?.seek(to: CMTimeMake(value: 0, timescale: 1))
@@ -136,23 +136,23 @@ extension MainAudioPlayer {
         initializeAVPlayerAndStartPlaying(with: previousTrack)
     }
     
-    func seekForward() {
+    public func seekForward() {
         let currentTime = convertMinutesAndSecondsToTotalSeconds(minutes: currentTime.value.minutes,
                                                                  seconds: currentTime.value.seconds)
         currentPlayer?.seek(to: CMTimeMake(value: Int64(currentTime + 15), timescale: 1))
     }
     
-    func seekBackward() {
+    public func seekBackward() {
         let currentTime = convertMinutesAndSecondsToTotalSeconds(minutes: currentTime.value.minutes,
                                                                  seconds: currentTime.value.seconds)
         currentPlayer?.seek(to: CMTimeMake(value: Int64(currentTime - 15), timescale: 1))
     }
     
-    func seek(to time: TimeInterval) {
+    public func seek(to time: TimeInterval) {
         currentPlayer?.seek(to: CMTimeMake(value: Int64(time), timescale: 1))
     }
     
-    func changeSpeed(to speed: AudioPlayerSpeed) {
+    public func changeSpeed(to speed: AudioPlayerSpeed) {
         currentSpeed.accept(speed)
         if state.value == .playing {
             currentPlayer?.playImmediately(atRate: speed.rawValue)
@@ -162,11 +162,11 @@ extension MainAudioPlayer {
 
 // MARK: - Queue Management Methods
 extension MainAudioPlayer {
-    func toggleRepeat() {
+    public func toggleRepeat() {
         isRepeatOn.accept(!isRepeatOn.value)
     }
     
-    func toggleShuffle() {
+    public func toggleShuffle() {
         isShuffleOn.accept(!isShuffleOn.value)
         if isShuffleOn.value {
             // Turn shuffle on
@@ -185,11 +185,11 @@ extension MainAudioPlayer {
         }
     }
     
-    func updateQueueOrder(queue: [PlayerAudioTrack]) {
+    public func updateQueueOrder(queue: [PlayerAudioTrack]) {
         self.queue.accept(queue)
     }
     
-    func removeTrackFromQueue(track: PlayerAudioTrack) {
+    public func removeTrackFromQueue(track: PlayerAudioTrack) {
         // Create updated instance of queue and remove track
         var updatedQueue = queue.value
         updatedQueue.removeAll { $0 == track }

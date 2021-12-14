@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ESAudioPlayer: 9a745023d7c294c87c1c5cf37ffa0960a084fbdd
+  ESAudioPlayer: 0ddf079a3be6914776fb64a16f4b6be52b6a11aa
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f

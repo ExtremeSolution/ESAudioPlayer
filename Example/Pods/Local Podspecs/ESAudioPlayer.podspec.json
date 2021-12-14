@@ -1,8 +1,8 @@
 {
   "name": "ESAudioPlayer",
   "version": "0.1.0",
-  "summary": "An extensible audio player for iOS",
-  "description": "ESAudioPlayer is an audioplayer for iOS. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.",
+  "summary": "A reactive audio player for iOS using RxSwift",
+  "description": "ESAudioPlayer is a reactive audioplayer for iOS using RxSwift. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.",
   "homepage": "https://github.com/ExtremeSolution/ESAudioPlayer",
   "license": {
     "type": "MIT",

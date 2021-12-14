@@ -11,13 +11,13 @@ import AVFoundation
 extension MainAudioPlayer {
     
     // MARK: - Calculated properties
-    var previousTrackInQueue: PlayerAudioTrack? {
+    public var previousTrackInQueue: PlayerAudioTrack? {
         guard let currentItemIndex = queue.value.firstIndex(where: { $0.id == self.currentTrack.value?.id }),
               currentItemIndex - 1 >= 0 else { return nil }
         return queue.value[currentItemIndex - 1]
     }
     
-    var nextTrackInQueue: PlayerAudioTrack? {
+    public var nextTrackInQueue: PlayerAudioTrack? {
         guard let currentItemIndex = queue.value.firstIndex(where: { $0.id == self.currentTrack.value?.id }),
               queue.value.count > currentItemIndex + 1 else { return nil }
         return queue.value[currentItemIndex + 1]
