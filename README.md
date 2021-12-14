@@ -4,11 +4,16 @@
 [![License](https://img.shields.io/cocoapods/l/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/ESAudioPlayer.svg?style=flat)](https://cocoapods.org/pods/ESAudioPlayer)
 
+<img src="assets/screenshot-1.png" width="25%" /> <img src="assets/screenshot-2.png" width="25%" />
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+* Swift version 5
+* iOS 13 or higher
+* Dependency on RxSwift as it's used to make player reactive
 
 ## Installation
 
