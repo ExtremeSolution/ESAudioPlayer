@@ -35,7 +35,7 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
     
     // MARK: - Initializer
     public static let shared = MainAudioPlayer()
-    private override init() {
+    override init() {
         super.init()
         
         configureAudioSession()

@@ -13,12 +13,13 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9D237F34AFF44BA13650DE2A /* Pods_ESAudioPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8971408E0CEBC2868981F7B7 /* Pods_ESAudioPlayer_Example.framework */; };
 		CFADFC3E276893E80046E555 /* AudioPlayerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFC3D276893E80046E555 /* AudioPlayerViewModel.swift */; };
 		CFADFC41276894090046E555 /* ViewModelType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFC40276894090046E555 /* ViewModelType.swift */; };
 		CFADFC4527689C240046E555 /* DummyDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFC4427689C240046E555 /* DummyDataGenerator.swift */; };
 		CFADFC472768A1710046E555 /* UIImageView+SetImageFromURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFC462768A1710046E555 /* UIImageView+SetImageFromURL.swift */; };
+		CFADFCAF276B7B9B0046E555 /* TestDummyDataGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCAD276B7B8C0046E555 /* TestDummyDataGenerator.swift */; };
+		CFADFCB3276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,7 +45,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* ESAudioPlayer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ESAudioPlayer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		8971408E0CEBC2868981F7B7 /* Pods_ESAudioPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESAudioPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94E6B5E923865258DEC8AF25 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		9FBB6193659DC4B831ADE395 /* Pods_ESAudioPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ESAudioPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,6 +53,8 @@
 		CFADFC40276894090046E555 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		CFADFC4427689C240046E555 /* DummyDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataGenerator.swift; sourceTree = "<group>"; };
 		CFADFC462768A1710046E555 /* UIImageView+SetImageFromURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+SetImageFromURL.swift"; sourceTree = "<group>"; };
+		CFADFCAD276B7B8C0046E555 /* TestDummyDataGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDummyDataGenerator.swift; sourceTree = "<group>"; };
+		CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioPlayerInitializationTests.swift; sourceTree = "<group>"; };
 		ECD86DE35E23905FCD3DFBA7 /* ESAudioPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ESAudioPlayer.podspec; path = ../ESAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9BF259FC2FD033C3A026A27 /* Pods-ESAudioPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESAudioPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-ESAudioPlayer_Example/Pods-ESAudioPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +138,8 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */,
+				CFADFCAC276B7B210046E555 /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -175,6 +178,14 @@
 				CFADFC40276894090046E555 /* ViewModelType.swift */,
 				CFADFC4427689C240046E555 /* DummyDataGenerator.swift */,
 				CFADFC462768A1710046E555 /* UIImageView+SetImageFromURL.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		CFADFCAC276B7B210046E555 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFADFCAD276B7B8C0046E555 /* TestDummyDataGenerator.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -369,7 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				CFADFCAF276B7B9B0046E555 /* TestDummyDataGenerator.swift in Sources */,
+				CFADFCB3276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

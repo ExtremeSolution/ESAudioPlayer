@@ -60,15 +60,17 @@ public class AudioPlayerViewModel: ViewModelType {
         
         // Configure input & output
         input = Input()
-        output = Output(currentTrack: player.currentTrack
-                            .compactMap { $0 }
-                            .asDriver(onErrorRecover: { _ in fatalError() }),
-                        state: player.state.asDriver(onErrorRecover: { _ in fatalError() }),
-                        nextButtonEnabled: nextButtonEnabledSubject.asDriver(onErrorJustReturn: false),
-                        currentTimeFormatted: currentTimeFormattedSubject.asDriver(onErrorJustReturn: ""),
-                        trackDurationFormatted: trackDurationFormattedSubject.asDriver(onErrorJustReturn: ""),
-                        trackSliderMaxValue: trackSliderMaxValueSubject.asDriver(onErrorJustReturn: 0),
-                        trackSliderCurrentValue: trackSliderCurrentValueSubject.asDriver(onErrorJustReturn: 0))
+        output = Output(
+            currentTrack: player.currentTrack
+                .compactMap { $0 }
+                .asDriver(onErrorRecover: { _ in fatalError() }),
+            state: player.state.asDriver(onErrorRecover: { _ in fatalError() }),
+            nextButtonEnabled: nextButtonEnabledSubject.asDriver(onErrorJustReturn: false),
+            currentTimeFormatted: currentTimeFormattedSubject.asDriver(onErrorJustReturn: ""),
+            trackDurationFormatted: trackDurationFormattedSubject.asDriver(onErrorJustReturn: ""),
+            trackSliderMaxValue: trackSliderMaxValueSubject.asDriver(onErrorJustReturn: 0),
+            trackSliderCurrentValue: trackSliderCurrentValueSubject.asDriver(onErrorJustReturn: 0)
+        )
         
         // Subscribe to events
         subscribeToPlayPauseButtonTapped()
