@@ -77,6 +77,7 @@ extension MainAudioPlayer {
             case .loaded:
                 DispatchQueue.main.async {
                     guard let asset = loadingAsset else {
+                        self.state.accept(.stopped)
                         completion(nil)
                         return
                     }
@@ -84,6 +85,7 @@ extension MainAudioPlayer {
                     completion(item)
                 }
             default:
+                self.state.accept(.stopped)
                 completion(nil)
             }
         }
