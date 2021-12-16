@@ -14,20 +14,20 @@ public typealias Seconds = Int
 public protocol AudioPlayer {
     
     // MARK: - Properties
-    var currentTrack: BehaviorRelay<PlayerAudioTrack?> { get }
-    var queue: BehaviorRelay<[PlayerAudioTrack]> { get }
+    var currentTrack: BehaviorRelay<ESPlayerAudioTrack?> { get }
+    var queue: BehaviorRelay<[ESPlayerAudioTrack]> { get }
     var state: BehaviorRelay<AudioPlayerState> { get }
     var currentTime: BehaviorRelay<(minutes: Minutes, seconds: Seconds)> { get }
     var trackDuration: BehaviorRelay<(minutes: Minutes, seconds: Seconds)> { get }
     var currentSpeed: BehaviorRelay<AudioPlayerSpeed> { get }
     var isRepeatOn: BehaviorRelay<Bool> { get }
     var isShuffleOn: BehaviorRelay<Bool> { get }
-    var nextTrackInQueue: PlayerAudioTrack? { get }
-    var previousTrackInQueue: PlayerAudioTrack? { get }
+    var nextTrackInQueue: ESPlayerAudioTrack? { get }
+    var previousTrackInQueue: ESPlayerAudioTrack? { get }
     
     // MARK: - Track Management Methods
-    func play(track: PlayerAudioTrack)
-    func play(list: [PlayerAudioTrack])
+    func play(track: ESPlayerAudioTrack)
+    func play(list: [ESPlayerAudioTrack])
     func pause()
     func resume()
     func next()
@@ -40,6 +40,6 @@ public protocol AudioPlayer {
     // MARK: - Queue Management Methods
     func toggleRepeat()
     func toggleShuffle()
-    func updateQueueOrder(queue: [PlayerAudioTrack])
-    func removeTrackFromQueue(track: PlayerAudioTrack)
+    func updateQueueOrder(queue: [ESPlayerAudioTrack])
+    func removeTrackFromQueue(track: ESPlayerAudioTrack)
 }

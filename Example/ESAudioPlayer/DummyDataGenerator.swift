@@ -10,14 +10,14 @@ import Foundation
 import ESAudioPlayer
 
 class DummyDataGenerator {
-    static let tracksList: [PlayerAudioTrack] = [
-        PlayerAudioTrack(
+    static let tracksList: [ESPlayerAudioTrack] = [
+        ESPlayerAudioTrack(
             id: 1,
             name: "Believe",
             imageURL: "https://i.imgur.com/GrkPDIK.jpg",
             fileURL: "https://www.bensound.com/bensound-music/bensound-buddy.mp3",
             artists: [
-                PlayerArtist(
+                ESPlayerArtist(
                     id: 1,
                     name: "John Mclain",
                     description: "",
@@ -25,13 +25,13 @@ class DummyDataGenerator {
                 )
             ]
         ),
-        PlayerAudioTrack(
+        ESPlayerAudioTrack(
             id: 2,
             name: "Trust",
             imageURL: "https://i.redd.it/8atdz8vki3q11.png",
             fileURL: "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
             artists: [
-                PlayerArtist(
+                ESPlayerArtist(
                     id: 1,
                     name: "Smart Sandro",
                     description: "",

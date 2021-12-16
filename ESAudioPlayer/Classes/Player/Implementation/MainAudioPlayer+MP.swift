@@ -52,7 +52,7 @@ extension MainAudioPlayer {
     }
     
     /// Provides display metadata
-    func setupNowPlayingCenter(track: PlayerAudioTrack) {
+    func setupNowPlayingCenter(track: ESPlayerAudioTrack) {
         // Define Now Playing Info
         var nowPlayingInfo = [String : Any]()
         nowPlayingInfo[MPMediaItemPropertyTitle] = track.name

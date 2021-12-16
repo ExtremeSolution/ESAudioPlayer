@@ -13,8 +13,8 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
     
     // MARK: - Properties
     // Public properties
-    public let currentTrack = BehaviorRelay<PlayerAudioTrack?>(value: nil)
-    public let queue = BehaviorRelay<[PlayerAudioTrack]>(value: [])
+    public let currentTrack = BehaviorRelay<ESPlayerAudioTrack?>(value: nil)
+    public let queue = BehaviorRelay<[ESPlayerAudioTrack]>(value: [])
     public let state = BehaviorRelay<AudioPlayerState>(value: .stopped)
     public let currentTime = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
     public let trackDuration = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
@@ -26,7 +26,7 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
     var currentPlayer: AVPlayer?
     let audioSession = AVAudioSession.sharedInstance()
     var currentPlayerTimeObserverToken: Any?
-    var unshuffledQueue: [PlayerAudioTrack]?
+    var unshuffledQueue: [ESPlayerAudioTrack]?
     var playBackBufferEmptyObserver: NSKeyValueObservation?
     var playBackLikelyToKeepUpObserver: NSKeyValueObservation?
     var playBackBufferFullObserver: NSKeyValueObservation?
@@ -50,7 +50,7 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
 
 // MARK: - Track Management Methods
 extension MainAudioPlayer {
-    public func play(track: PlayerAudioTrack) {
+    public func play(track: ESPlayerAudioTrack) {
         // Make sure the track is not already playing
         guard track != currentTrack.value else { return }
         
@@ -74,7 +74,7 @@ extension MainAudioPlayer {
         }
     }
     
-    public func play(list: [PlayerAudioTrack]) {
+    public func play(list: [ESPlayerAudioTrack]) {
         guard !list.isEmpty else { return }
         
         // Reset playback speed
@@ -185,11 +185,11 @@ extension MainAudioPlayer {
         }
     }
     
-    public func updateQueueOrder(queue: [PlayerAudioTrack]) {
+    public func updateQueueOrder(queue: [ESPlayerAudioTrack]) {
         self.queue.accept(queue)
     }
     
-    public func removeTrackFromQueue(track: PlayerAudioTrack) {
+    public func removeTrackFromQueue(track: ESPlayerAudioTrack) {
         // Create updated instance of queue and remove track
         var updatedQueue = queue.value
         updatedQueue.removeAll { $0 == track }

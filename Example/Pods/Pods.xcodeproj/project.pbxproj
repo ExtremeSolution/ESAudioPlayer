@@ -234,7 +234,7 @@
 		B8E6CDFC3DE46CB823FCC2262C43476B /* InfiniteSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557267692F05F367514F89862CE19E5 /* InfiniteSequence.swift */; };
 		BB3A757B76C83F80EDBD52560446E616 /* NSControl+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECEE5E63EC1EFACEFBB450121C19DFB5 /* NSControl+Rx.swift */; };
 		BB5AA321A3881291F985DF139D1B32D4 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 448CA4ACE88CFBD3F28BAB064FD0B160 /* Timeout.swift */; };
-		BB88F7FB3096E7BBB4DD11DD45918102 /* PlayerArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379817ACDC2E00B6806D0D0D97DF6AAA /* PlayerArtist.swift */; };
+		BB88F7FB3096E7BBB4DD11DD45918102 /* ESPlayerArtist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379817ACDC2E00B6806D0D0D97DF6AAA /* ESPlayerArtist.swift */; };
 		BCB152DC13C3BFE393B7C5881232CA47 /* ToArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09D8736A7C0FD1AF276FEA4F4877B88F /* ToArray.swift */; };
 		BD0E33BD8240B2F2CB1BB7BE0B020328 /* RxCocoaRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 94F42F06A43000234DAA3C23CC5DF157 /* RxCocoaRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BDB218F47B7A830601D23301D844DC86 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D481CA452E348A937AD49C5D3999B0 /* Driver.swift */; };
@@ -261,7 +261,7 @@
 		CEBD7C7E104DACD08A571547E7420516 /* UISearchBar+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB565FA978DB894D8F6E17316CF9763 /* UISearchBar+Rx.swift */; };
 		CF85AA1FD7FB97C712CB41D3E4E029EB /* RxCocoaObjCRuntimeError+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B2ECC49AA2624370FFE94EC1D84AE4 /* RxCocoaObjCRuntimeError+Extensions.swift */; };
 		D033FD81AE9C9AAA40070D85388CA8EE /* Dematerialize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B0144ED173326DE1405E7F61FE9F730 /* Dematerialize.swift */; };
-		D0E25BFD67C4099AFE328FC830825F58 /* PlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF778BA101DC5A83C06B8B52DCA0960 /* PlayerMode.swift */; };
+		D0E25BFD67C4099AFE328FC830825F58 /* ESPlayerMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF778BA101DC5A83C06B8B52DCA0960 /* ESPlayerMode.swift */; };
 		D18FF6318976B4FA2393D366CD9F7E2B /* Maybe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8973965269C9E3173237F8208ADD3 /* Maybe.swift */; };
 		D2D7FD1D15C5288812FC11BF7741493A /* AnyObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DB9DDA30054FECD21544495D986BAA /* AnyObserver.swift */; };
 		D36257AA8B811271A8FC65362BF3C6D4 /* SwitchIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F86158B6D8BE05F2438FC8EFBC2293A /* SwitchIfEmpty.swift */; };
@@ -272,7 +272,7 @@
 		D8B12F0E3CB44666F5C6746F3786E71F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D6D220E65669A6FD599649F6077300C /* Foundation.framework */; };
 		D97EE55D30AF01C182214119BAD805F3 /* BehaviorSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA49E433E75EF3A416BCDA54C2B37C /* BehaviorSubject.swift */; };
 		D9B28793352010412A97E9544E5EC84A /* Decode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FBF40AA15248F079E4B9DF1A85EB70 /* Decode.swift */; };
-		DB61F088D2C8F39B90321A29B92A1EC9 /* PlayerAudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC011D862CCB9056D5CAB214AE003EAF /* PlayerAudioTrack.swift */; };
+		DB61F088D2C8F39B90321A29B92A1EC9 /* ESPlayerAudioTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC011D862CCB9056D5CAB214AE003EAF /* ESPlayerAudioTrack.swift */; };
 		DC7C79DA436D0E56580F23C2C2D465BC /* Debounce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C26BE57300A8B093FA1ED925B4D8B7A /* Debounce.swift */; };
 		DF3435A9F9C2C61552AF105CCA4997F2 /* RxTableViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360E1C390A1B073F4BD35E681FD7CD2D /* RxTableViewDataSourceProxy.swift */; };
 		DF5174934FEDFAA58B01D29EF937F130 /* PrimitiveSequence+Zip+arity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91CEE3D68C7D8227DB20C5B96DB29914 /* PrimitiveSequence+Zip+arity.swift */; };
@@ -455,7 +455,7 @@
 		34244AA09CD08A812AA9A6DE274B13BA /* Optional.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Optional.swift; path = RxSwift/Observables/Optional.swift; sourceTree = "<group>"; };
 		3483E8D4A7EAA701706D9C0AAC9EB435 /* ReplayRelay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplayRelay.swift; path = RxRelay/ReplayRelay.swift; sourceTree = "<group>"; };
 		360E1C390A1B073F4BD35E681FD7CD2D /* RxTableViewDataSourceProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTableViewDataSourceProxy.swift; path = RxCocoa/iOS/Proxies/RxTableViewDataSourceProxy.swift; sourceTree = "<group>"; };
-		379817ACDC2E00B6806D0D0D97DF6AAA /* PlayerArtist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerArtist.swift; sourceTree = "<group>"; };
+		379817ACDC2E00B6806D0D0D97DF6AAA /* ESPlayerArtist.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ESPlayerArtist.swift; sourceTree = "<group>"; };
 		3895EF3F1E2AB056216A901F0AE42B7E /* RxTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTarget.swift; path = RxCocoa/Common/RxTarget.swift; sourceTree = "<group>"; };
 		3906268370729D2247BBBD8FE81501A7 /* RxSwift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxSwift-umbrella.h"; sourceTree = "<group>"; };
 		3A77430CD4B2F7FBA8808458EEBC91C0 /* RxRelay.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = RxRelay.modulemap; sourceTree = "<group>"; };
@@ -547,7 +547,7 @@
 		79F243810B7854CF651709ABA0A17DDE /* Binder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Binder.swift; path = RxSwift/Binder.swift; sourceTree = "<group>"; };
 		7A786A088F1154A4C494DD793715E2DB /* Range.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Range.swift; path = RxSwift/Observables/Range.swift; sourceTree = "<group>"; };
 		7B3BF84C91F90193BA8A9FFE22323716 /* Pods-ESAudioPlayer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ESAudioPlayer_Example-frameworks.sh"; sourceTree = "<group>"; };
-		7BF778BA101DC5A83C06B8B52DCA0960 /* PlayerMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerMode.swift; sourceTree = "<group>"; };
+		7BF778BA101DC5A83C06B8B52DCA0960 /* ESPlayerMode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ESPlayerMode.swift; sourceTree = "<group>"; };
 		7CC69C30C93F18A987BB3011B32EE4CD /* RxPickerViewAdapter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxPickerViewAdapter.swift; path = RxCocoa/iOS/DataSources/RxPickerViewAdapter.swift; sourceTree = "<group>"; };
 		7D68F26CDA4C411325900D002DF37120 /* RxMutableBox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxMutableBox.swift; path = RxSwift/RxMutableBox.swift; sourceTree = "<group>"; };
 		7D81983618635B29CF3CC873574395EB /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UINavigationController+Rx.swift"; path = "RxCocoa/iOS/UINavigationController+Rx.swift"; sourceTree = "<group>"; };
@@ -726,7 +726,7 @@
 		FA394F329B42F4F877331FEC5E19A737 /* UIStepper+Rx.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIStepper+Rx.swift"; path = "RxCocoa/iOS/UIStepper+Rx.swift"; sourceTree = "<group>"; };
 		FA670DA1F167055382A1F9F1DD1B8529 /* RxRelay-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "RxRelay-Info.plist"; sourceTree = "<group>"; };
 		FB229929C1B4CCC2AB4C6790995C6F58 /* Pods-ESAudioPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ESAudioPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		FC011D862CCB9056D5CAB214AE003EAF /* PlayerAudioTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PlayerAudioTrack.swift; sourceTree = "<group>"; };
+		FC011D862CCB9056D5CAB214AE003EAF /* ESPlayerAudioTrack.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ESPlayerAudioTrack.swift; sourceTree = "<group>"; };
 		FCC55444CC9459EF67B2E38668B7C9BB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		FD5AD47762F4F2D6D4E47DC5A2022113 /* RxCollectionViewDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxCollectionViewDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxCollectionViewDelegateProxy.swift; sourceTree = "<group>"; };
 		FF7678499772A15AF37D2BA22DF70257 /* RxTextStorageDelegateProxy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RxTextStorageDelegateProxy.swift; path = RxCocoa/iOS/Proxies/RxTextStorageDelegateProxy.swift; sourceTree = "<group>"; };
@@ -1294,9 +1294,9 @@
 		F9EBF5CD9BD90701806CCAB9555636DE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				379817ACDC2E00B6806D0D0D97DF6AAA /* PlayerArtist.swift */,
-				FC011D862CCB9056D5CAB214AE003EAF /* PlayerAudioTrack.swift */,
-				7BF778BA101DC5A83C06B8B52DCA0960 /* PlayerMode.swift */,
+				379817ACDC2E00B6806D0D0D97DF6AAA /* ESPlayerArtist.swift */,
+				FC011D862CCB9056D5CAB214AE003EAF /* ESPlayerAudioTrack.swift */,
+				7BF778BA101DC5A83C06B8B52DCA0960 /* ESPlayerMode.swift */,
 			);
 			name = Model;
 			path = ESAudioPlayer/Classes/Player/Model;
@@ -1764,9 +1764,9 @@
 				B8016C3C50D43A209415E99802B3FE7C /* MainAudioPlayer+MP.swift in Sources */,
 				70929E55532D0EBEBFA61A3D4FE25A4F /* MainAudioPlayer+UpdateSubscriptions.swift in Sources */,
 				8008432A2141AED8775F13658BFD4D4B /* MainAudioPlayer.swift in Sources */,
-				BB88F7FB3096E7BBB4DD11DD45918102 /* PlayerArtist.swift in Sources */,
-				DB61F088D2C8F39B90321A29B92A1EC9 /* PlayerAudioTrack.swift in Sources */,
-				D0E25BFD67C4099AFE328FC830825F58 /* PlayerMode.swift in Sources */,
+				BB88F7FB3096E7BBB4DD11DD45918102 /* ESPlayerArtist.swift in Sources */,
+				DB61F088D2C8F39B90321A29B92A1EC9 /* ESPlayerAudioTrack.swift in Sources */,
+				D0E25BFD67C4099AFE328FC830825F58 /* ESPlayerMode.swift in Sources */,
 				9FA2B67BCC69CA5AA8CFCA6430D16B8B /* TimeHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

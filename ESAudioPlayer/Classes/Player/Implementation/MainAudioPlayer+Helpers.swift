@@ -11,20 +11,20 @@ import AVFoundation
 extension MainAudioPlayer {
     
     // MARK: - Calculated properties
-    public var previousTrackInQueue: PlayerAudioTrack? {
+    public var previousTrackInQueue: ESPlayerAudioTrack? {
         guard let currentItemIndex = queue.value.firstIndex(where: { $0.id == self.currentTrack.value?.id }),
               currentItemIndex - 1 >= 0 else { return nil }
         return queue.value[currentItemIndex - 1]
     }
     
-    public var nextTrackInQueue: PlayerAudioTrack? {
+    public var nextTrackInQueue: ESPlayerAudioTrack? {
         guard let currentItemIndex = queue.value.firstIndex(where: { $0.id == self.currentTrack.value?.id }),
               queue.value.count > currentItemIndex + 1 else { return nil }
         return queue.value[currentItemIndex + 1]
     }
     
     // MARK: - Methods
-    func initializeAVPlayerAndStartPlaying(with track: PlayerAudioTrack?) {
+    func initializeAVPlayerAndStartPlaying(with track: ESPlayerAudioTrack?) {
         guard let track = track,
               let trackURL = URL(string: track.fileURL) else { return }
         
@@ -62,7 +62,7 @@ extension MainAudioPlayer {
     }
     
     private func loadAsset(withTrackURL trackURL: URL,
-                           track: PlayerAudioTrack,
+                           track: ESPlayerAudioTrack,
                            completion: @escaping (AVPlayerItem?) -> Void) {
         // Cancel already loading asset if it exists
         loadingAsset?.cancelLoading()

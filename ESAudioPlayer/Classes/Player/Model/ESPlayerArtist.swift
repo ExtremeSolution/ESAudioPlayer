@@ -1,5 +1,5 @@
 //
-//  PlayerArtist.swift
+//  ESPlayerArtist.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 21/06/2021.
@@ -8,7 +8,7 @@
 import Foundation
 
 /// The artist object used in player
-public struct PlayerArtist: Equatable {
+public struct ESPlayerArtist: Equatable {
     
     // MARK: - Properties
     public let id: Int

@@ -1,5 +1,5 @@
 //
-//  PlayerAudioTrack.swift
+//  ESPlayerAudioTrack.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 21/06/2021.
@@ -8,14 +8,14 @@
 import Foundation
 
 /// The track object used in player
-public struct PlayerAudioTrack: Equatable {
+public struct ESPlayerAudioTrack: Equatable {
     
     // MARK: - Properties
     public let id: Int
     public let name: String
     public let imageURL: String
     public let fileURL: String
-    public let artists: [PlayerArtist]
+    public let artists: [ESPlayerArtist]
     
     // MARK: - Calculated properties
     /// Reduces the list of artists into a single combined string
@@ -29,7 +29,7 @@ public struct PlayerAudioTrack: Equatable {
         name: String,
         imageURL: String,
         fileURL: String,
-        artists: [PlayerArtist]
+        artists: [ESPlayerArtist]
     ) {
         self.id = id
         self.name = name

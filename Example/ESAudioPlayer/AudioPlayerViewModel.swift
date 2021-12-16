@@ -27,7 +27,7 @@ public class AudioPlayerViewModel: ViewModelType {
     }
     
     public struct Output {
-        let currentTrack: Driver<PlayerAudioTrack>
+        let currentTrack: Driver<ESPlayerAudioTrack>
         let state: Driver<AudioPlayerState>
         let nextButtonEnabled: Driver<Bool>
         let currentTimeFormatted: Driver<String>
@@ -37,7 +37,7 @@ public class AudioPlayerViewModel: ViewModelType {
     }
     
     // MARK: - Subjects
-    private let modeSubject = BehaviorSubject<PlayerMode>(value: .normal)
+    private let modeSubject = BehaviorSubject<ESPlayerMode>(value: .normal)
     private let selectedCoverImageIndexSubject = BehaviorSubject<IndexPath>(value: IndexPath(item: 0, section: 0))
     private let nextButtonEnabledSubject = BehaviorSubject<Bool>(value: false)
     private let currentTimeFormattedSubject = BehaviorSubject<String>(value: "")
@@ -47,14 +47,14 @@ public class AudioPlayerViewModel: ViewModelType {
     
     // MARK: - Properties
     private let player: AudioPlayer
-    private let mode: PlayerMode
+    private let mode: ESPlayerMode
     private var isSeeking = false
     private let disposeBag = DisposeBag()
     
     // MARK: - Initializer
-    public init(list: [PlayerAudioTrack]? = nil,
-                track: PlayerAudioTrack? = nil,
-                mode: PlayerMode = .normal) {
+    public init(list: [ESPlayerAudioTrack]? = nil,
+                track: ESPlayerAudioTrack? = nil,
+                mode: ESPlayerMode = .normal) {
         self.mode = mode
         self.player = MainAudioPlayer.shared
         
@@ -83,12 +83,12 @@ public class AudioPlayerViewModel: ViewModelType {
     }
     
     // Public Interface
-    public func switchMode(to newMode: PlayerMode) {
+    public func switchMode(to newMode: ESPlayerMode) {
         guard let oldMode = try? modeSubject.value(), oldMode != newMode else { return }
         modeSubject.onNext(newMode)
     }
     
-    public func play(list: [PlayerAudioTrack]? = nil, track: PlayerAudioTrack? = nil) {
+    public func play(list: [ESPlayerAudioTrack]? = nil, track: ESPlayerAudioTrack? = nil) {
         if let list = list {
             player.play(list: list)
         } else if let track = track {
