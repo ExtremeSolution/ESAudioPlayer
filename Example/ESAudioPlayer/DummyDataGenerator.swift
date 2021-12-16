@@ -15,7 +15,10 @@ class DummyDataGenerator {
             id: 1,
             name: "Believe",
             imageURL: "https://i.imgur.com/GrkPDIK.jpg",
-            fileURL: "https://www.bensound.com/bensound-music/bensound-buddy.mp3",
+            fileURL: Bundle.main.url(
+                forResource: "soundsample1",
+                withExtension: "mp3"
+            )!.absoluteString,
             artists: [
                 ESPlayerArtist(
                     id: 1,
@@ -29,7 +32,10 @@ class DummyDataGenerator {
             id: 2,
             name: "Trust",
             imageURL: "https://i.redd.it/8atdz8vki3q11.png",
-            fileURL: "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
+            fileURL: Bundle.main.url(
+                forResource: "soundsample2",
+                withExtension: "mp3"
+            )!.absoluteString,
             artists: [
                 ESPlayerArtist(
                     id: 1,
