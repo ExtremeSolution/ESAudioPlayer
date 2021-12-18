@@ -1,5 +1,5 @@
 //
-//  AudioPlayerSpeed.swift
+//  ESAudioPlayerSpeed.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 21/06/2021.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum AudioPlayerSpeed: Float, CaseIterable {
+public enum ESAudioPlayerSpeed: Float, CaseIterable {
     case half = 0.5
     case quarterSlower = 0.75
     case normal = 1

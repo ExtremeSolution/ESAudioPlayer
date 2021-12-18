@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayer+UpdateSubscriptions.swift
+//  ESAudioPlayer+UpdateSubscriptions.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 24/06/2021.
@@ -10,7 +10,7 @@ import RxSwift
 import RxCocoa
 
 // MARK: - Player Update Subscriptions
-extension MainAudioPlayer {
+extension ESAudioPlayer {
     func subscribeForTimeUpdatesAndSetDuration() {
         trackDuration.accept(currentPlayer?.currentItem?.asset.duration.seconds.toMinutesAndSeconds() ?? (0, 0))
         currentPlayerTimeObserverToken = currentPlayer?

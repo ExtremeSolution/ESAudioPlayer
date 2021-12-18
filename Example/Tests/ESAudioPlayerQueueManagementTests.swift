@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayerQueueManagementTests.swift
+//  ESAudioPlayerQueueManagementTests.swift
 //  ESAudioPlayer_Tests
 //
 //  Created by Mario Mouris on 18/12/2021.
@@ -9,16 +9,16 @@
 import XCTest
 @testable import ESAudioPlayer
 
-class MainAudioPlayerQueueManagementTests: XCTestCase {
+class ESAudioPlayerQueueManagementTests: XCTestCase {
 
     // MARK: - Properties
-    private var player: MainAudioPlayer!
+    private var player: ESAudioPlayer!
     
     // MARK: - Setup methods
     override func setUp() {
         super.setUp()
         
-        player = MainAudioPlayer()
+        player = ESAudioPlayer()
     }
     
     // MARK: - Queue management tests

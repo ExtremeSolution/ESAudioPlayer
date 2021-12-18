@@ -28,7 +28,7 @@ public class AudioPlayerViewModel: ViewModelType {
     
     public struct Output {
         let currentTrack: Driver<ESPlayerAudioTrack>
-        let state: Driver<AudioPlayerState>
+        let state: Driver<ESAudioPlayerState>
         let nextButtonEnabled: Driver<Bool>
         let currentTimeFormatted: Driver<String>
         let trackDurationFormatted: Driver<String>
@@ -46,7 +46,7 @@ public class AudioPlayerViewModel: ViewModelType {
     private let trackSliderCurrentValueSubject = BehaviorRelay<Float>(value: 0)
     
     // MARK: - Properties
-    private let player: AudioPlayer
+    private let player: ESAudioPlayer
     private let mode: ESPlayerMode
     private var isSeeking = false
     private let disposeBag = DisposeBag()
@@ -56,7 +56,7 @@ public class AudioPlayerViewModel: ViewModelType {
                 track: ESPlayerAudioTrack? = nil,
                 mode: ESPlayerMode = .normal) {
         self.mode = mode
-        self.player = MainAudioPlayer.shared
+        self.player = ESAudioPlayer.shared
         
         // Configure input & output
         input = Input()

@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayerTrackManagementTests.swift
+//  ESAudioPlayerTrackManagementTests.swift
 //  ESAudioPlayer_Tests
 //
 //  Created by Mario Mouris on 16/12/2021.
@@ -10,16 +10,16 @@ import XCTest
 import RxSwift
 @testable import ESAudioPlayer
 
-class MainAudioPlayerTrackManagementTests: XCTestCase {
+class ESAudioPlayerTrackManagementTests: XCTestCase {
 
     // MARK: - Properties
-    private var player: MainAudioPlayer!
+    private var player: ESAudioPlayer!
     
     // MARK: - Setup methods
     override func setUp() {
         super.setUp()
         
-        player = MainAudioPlayer()
+        player = ESAudioPlayer()
     }
     
     // MARK: - Player state tests
@@ -52,7 +52,6 @@ class MainAudioPlayerTrackManagementTests: XCTestCase {
     func test_playTrack_shouldUpdateQueueAndCurrentTrack() {
         let track = TestDummyDataGenerator.genericTrack
         player.play(track: track)
-        wait(for: 0.1)
         XCTAssertEqual(player.currentTrack.value, track)
         XCTAssertEqual(player.queue.value, [track])
     }
@@ -80,7 +79,7 @@ class MainAudioPlayerTrackManagementTests: XCTestCase {
         player.play(track: TestDummyDataGenerator.genericTrack)
         wait(for: 1.5)
         player.previous()
-        wait(for: 0.1)
+        wait(for: 0.2)
         
         XCTAssertEqual(player.currentTime.value.minutes, 0)
         XCTAssertEqual(player.currentTime.value.seconds, 0)
@@ -88,17 +87,17 @@ class MainAudioPlayerTrackManagementTests: XCTestCase {
     
     func test_playTrackThenSeekForward_shouldSkip15Seconds() {
         player.play(track: TestDummyDataGenerator.genericTrack)
-        wait(for: 0.1)
+        wait(for: 0.2)
         player.seekForward()
-        wait(for: 0.1)
+        wait(for: 0.2)
         XCTAssertEqual(player.currentTime.value.seconds, 15)
     }
     
     func test_playTrackThenSeekToTime_shouldSkipToSameTime() {
         player.play(track: TestDummyDataGenerator.genericTrack)
-        wait(for: 0.1)
+        wait(for: 0.2)
         player.seek(to: 20)
-        wait(for: 0.1)
+        wait(for: 0.2)
         XCTAssertEqual(player.currentTime.value.seconds, 20)
     }
 }

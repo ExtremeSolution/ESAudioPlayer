@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayerInitializationTests.swift
+//  ESAudioPlayerInitializationTests.swift
 //  ESAudioPlayer_Tests
 //
 //  Created by Mario Mouris on 16/12/2021.
@@ -9,16 +9,16 @@
 import XCTest
 @testable import ESAudioPlayer
 
-class MainAudioPlayerInitializationTests: XCTestCase {
+class ESAudioPlayerInitializationTests: XCTestCase {
 
     // MARK: - Properties
-    private var player: MainAudioPlayer!
+    private var player: ESAudioPlayer!
     
     // MARK: - Setup methods
     override func setUp() {
         super.setUp()
         
-        player = MainAudioPlayer()
+        player = ESAudioPlayer()
     }
     
     // MARK: - Player initialziation tests
