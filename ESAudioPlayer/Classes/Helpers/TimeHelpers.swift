@@ -8,14 +8,14 @@
 import Foundation
 
 extension Double {
-    public func toMinutesAndSeconds() -> (Minutes, Seconds) {
+    func toMinutesAndSeconds() -> (Minutes, Seconds) {
         let (_,  minf) = modf(self / 3600)
         let (min, secf) = modf(60 * minf)
         return (Int(min), Int(60 * secf))
     }
 }
 
-public func convertMinutesAndSecondsToTotalSeconds(
+func convertMinutesAndSecondsToTotalSeconds(
     minutes: Minutes,
     seconds: Seconds
 ) -> Seconds {

@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayer.swift
+//  ESAudioPlayer.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 21/06/2021.
@@ -9,16 +9,19 @@ import AVFoundation
 import RxSwift
 import RxCocoa
 
-public class MainAudioPlayer: NSObject, AudioPlayer {
+public typealias Minutes = Int
+public typealias Seconds = Int
+
+public class ESAudioPlayer: NSObject {
     
     // MARK: - Properties
     // Public properties
     public let currentTrack = BehaviorRelay<ESPlayerAudioTrack?>(value: nil)
     public let queue = BehaviorRelay<[ESPlayerAudioTrack]>(value: [])
-    public let state = BehaviorRelay<AudioPlayerState>(value: .stopped)
+    public let state = BehaviorRelay<ESAudioPlayerState>(value: .stopped)
     public let currentTime = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
     public let trackDuration = BehaviorRelay<(minutes: Minutes, seconds: Seconds)>(value: (0, 0))
-    public let currentSpeed = BehaviorRelay<AudioPlayerSpeed>(value: .normal)
+    public let currentSpeed = BehaviorRelay<ESAudioPlayerSpeed>(value: .normal)
     public let isRepeatOn = BehaviorRelay<Bool>(value: false)
     public let isShuffleOn = BehaviorRelay<Bool>(value: false)
     
@@ -34,8 +37,8 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
     var loadingAsset: AVAsset?
     
     // MARK: - Initializer
-    public static let shared = MainAudioPlayer()
-    private override init() {
+    public static let shared = ESAudioPlayer()
+    override init() {
         super.init()
         
         configureAudioSession()
@@ -49,7 +52,7 @@ public class MainAudioPlayer: NSObject, AudioPlayer {
 }
 
 // MARK: - Track Management Methods
-extension MainAudioPlayer {
+extension ESAudioPlayer {
     public func play(track: ESPlayerAudioTrack) {
         // Make sure the track is not already playing
         guard track != currentTrack.value else { return }
@@ -152,7 +155,7 @@ extension MainAudioPlayer {
         currentPlayer?.seek(to: CMTimeMake(value: Int64(time), timescale: 1))
     }
     
-    public func changeSpeed(to speed: AudioPlayerSpeed) {
+    public func changeSpeed(to speed: ESAudioPlayerSpeed) {
         currentSpeed.accept(speed)
         if state.value == .playing {
             currentPlayer?.playImmediately(atRate: speed.rawValue)
@@ -161,7 +164,7 @@ extension MainAudioPlayer {
 }
 
 // MARK: - Queue Management Methods
-extension MainAudioPlayer {
+extension ESAudioPlayer {
     public func toggleRepeat() {
         isRepeatOn.accept(!isRepeatOn.value)
     }

@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayer+MP.swift
+//  ESAudioPlayer+MP.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 24/06/2021.
@@ -8,7 +8,7 @@
 import Foundation
 import MediaPlayer
 
-extension MainAudioPlayer {
+extension ESAudioPlayer {
     /// Configures the remote command handlers
     func setupRemoteTransportControls() {
         // Get the shared MPRemoteCommandCenter

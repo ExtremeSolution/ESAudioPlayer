@@ -1,5 +1,5 @@
 //
-//  MainAudioPlayer+Helpers.swift
+//  ESAudioPlayer+Helpers.swift
 //  Anaphora
 //
 //  Created by Mario Mouris on 24/06/2021.
@@ -8,7 +8,7 @@
 import AVFoundation
 
 // MARK: - Helpers
-extension MainAudioPlayer {
+extension ESAudioPlayer {
     
     // MARK: - Calculated properties
     public var previousTrackInQueue: ESPlayerAudioTrack? {
@@ -77,6 +77,7 @@ extension MainAudioPlayer {
             case .loaded:
                 DispatchQueue.main.async {
                     guard let asset = loadingAsset else {
+                        self.state.accept(.stopped)
                         completion(nil)
                         return
                     }
@@ -84,6 +85,7 @@ extension MainAudioPlayer {
                     completion(item)
                 }
             default:
+                self.state.accept(.stopped)
                 completion(nil)
             }
         }
