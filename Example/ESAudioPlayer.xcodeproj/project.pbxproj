@@ -26,6 +26,7 @@
 		CFADFCC9276B8A5F0046E555 /* soundsample1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB5276B86C70046E555 /* soundsample1.mp3 */; };
 		CFADFCCA276B8A5F0046E555 /* soundsample2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB4276B86C70046E555 /* soundsample2.mp3 */; };
 		CFADFCD1276E4AE60046E555 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCD0276E4AE60046E555 /* XCTestCase+Wait.swift */; };
+		CFADFCD5276E4EE20046E555 /* MainAudioPlayerQueueManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCD4276E4EE20046E555 /* MainAudioPlayerQueueManagementTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		CFADFCB5276B86C70046E555 /* soundsample1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundsample1.mp3; sourceTree = "<group>"; };
 		CFADFCC7276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioPlayerTrackManagementTests.swift; sourceTree = "<group>"; };
 		CFADFCD0276E4AE60046E555 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
+		CFADFCD4276E4EE20046E555 /* MainAudioPlayerQueueManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioPlayerQueueManagementTests.swift; sourceTree = "<group>"; };
 		ECD86DE35E23905FCD3DFBA7 /* ESAudioPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ESAudioPlayer.podspec; path = ../ESAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9BF259FC2FD033C3A026A27 /* Pods-ESAudioPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESAudioPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-ESAudioPlayer_Example/Pods-ESAudioPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +153,7 @@
 			children = (
 				CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */,
 				CFADFCC7276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift */,
+				CFADFCD4276E4EE20046E555 /* MainAudioPlayerQueueManagementTests.swift */,
 				CFADFCC6276B88810046E555 /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
@@ -406,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFADFCD5276E4EE20046E555 /* MainAudioPlayerQueueManagementTests.swift in Sources */,
 				CFADFCAF276B7B9B0046E555 /* TestDummyDataGenerator.swift in Sources */,
 				CFADFCD1276E4AE60046E555 /* XCTestCase+Wait.swift in Sources */,
 				CFADFCB3276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift in Sources */,
