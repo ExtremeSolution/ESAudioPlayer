@@ -14,7 +14,10 @@ internal class TestDummyDataGenerator {
         id: 1,
         name: "TrackName",
         imageURL: "ImageURL",
-        fileURL: "https://www.bensound.com/bensound-music/bensound-buddy.mp3",
+        fileURL: Bundle.main.url(
+            forResource: "soundsample1",
+            withExtension: "mp3"
+        )!.absoluteString,
         artists: [
             ESPlayerArtist(
                 id: 1,
@@ -30,7 +33,10 @@ internal class TestDummyDataGenerator {
             id: 1,
             name: "TrackName1",
             imageURL: "ImageURL1",
-            fileURL: "https://www.bensound.com/bensound-music/bensound-buddy.mp3",
+            fileURL: Bundle.main.url(
+                forResource: "soundsample1",
+                withExtension: "mp3"
+            )!.absoluteString,
             artists: [
                 ESPlayerArtist(
                     id: 1,
@@ -44,7 +50,10 @@ internal class TestDummyDataGenerator {
             id: 2,
             name: "TrackName2",
             imageURL: "ImageURL2",
-            fileURL: "https://www.bensound.com/bensound-music/bensound-happyrock.mp3",
+            fileURL: Bundle.main.url(
+                forResource: "soundsample2",
+                withExtension: "mp3"
+            )!.absoluteString,
             artists: [
                 ESPlayerArtist(
                     id: 2,

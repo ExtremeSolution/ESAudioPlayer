@@ -157,12 +157,16 @@ public class AudioPlayerViewModel: ViewModelType {
                     "\(String(format: "%02d", trackDuration.seconds))")
 
                 if !self.isSeeking {
-                    self.trackSliderMaxValueSubject.accept(Float(convertMinutesAndSecondsToTotalSeconds(
-                                                                    minutes: trackDuration.minutes,
-                                                                    seconds: trackDuration.seconds)))
-                    self.trackSliderCurrentValueSubject.accept(Float(convertMinutesAndSecondsToTotalSeconds(
-                                                                        minutes: currentTime.minutes,
-                                                                        seconds: currentTime.seconds)))
+                    self.trackSliderMaxValueSubject.accept(
+                        Float(
+                            (trackDuration.minutes * 60) + trackDuration.seconds
+                        )
+                    )
+                    self.trackSliderCurrentValueSubject.accept(
+                        Float(
+                            (currentTime.minutes * 60) + currentTime.seconds
+                        )
+                    )
                 }
             }).disposed(by: disposeBag)
     }

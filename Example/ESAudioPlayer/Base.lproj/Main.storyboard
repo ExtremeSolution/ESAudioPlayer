@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="rcc-Yc-FNK">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -8,6 +8,44 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--View Controller-->
+        <scene sceneID="lBG-zT-Xk6">
+            <objects>
+                <viewController id="rcc-Yc-FNK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rtU-dQ-TBl"/>
+                        <viewControllerLayoutGuide type="bottom" id="TZS-97-epp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RO2-wr-ftt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D8Z-Ho-sbA">
+                                <rect key="frame" x="107" y="423" width="200" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="HRE-qs-u9P"/>
+                                    <constraint firstAttribute="height" constant="50" id="O6A-Lp-0gA"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start Player"/>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" modalPresentationStyle="fullScreen" id="Xvb-ef-4PH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D8Z-Ho-sbA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RO2-wr-ftt" secondAttribute="leadingMargin" constant="32" id="ANS-GS-SVI"/>
+                            <constraint firstItem="D8Z-Ho-sbA" firstAttribute="centerX" secondItem="RO2-wr-ftt" secondAttribute="centerX" id="VvI-u2-PbB"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="D8Z-Ho-sbA" secondAttribute="trailing" constant="32" id="lku-YH-a4c"/>
+                            <constraint firstItem="D8Z-Ho-sbA" firstAttribute="centerY" secondItem="RO2-wr-ftt" secondAttribute="centerY" id="tHz-8Y-g8p"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lu0-Ix-xlf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-791" y="112"/>
+        </scene>
         <!--Audio Player View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>

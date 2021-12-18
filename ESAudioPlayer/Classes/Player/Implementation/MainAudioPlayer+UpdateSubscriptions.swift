@@ -14,7 +14,7 @@ extension MainAudioPlayer {
     func subscribeForTimeUpdatesAndSetDuration() {
         trackDuration.accept(currentPlayer?.currentItem?.asset.duration.seconds.toMinutesAndSeconds() ?? (0, 0))
         currentPlayerTimeObserverToken = currentPlayer?
-            .addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 1), queue: .main, using: { _ in
+            .addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 5), queue: .main, using: { _ in
                 // Update current time
                 self.currentTime.accept(self.currentPlayer?.currentTime().seconds.toMinutesAndSeconds() ?? (0, 0))
                 

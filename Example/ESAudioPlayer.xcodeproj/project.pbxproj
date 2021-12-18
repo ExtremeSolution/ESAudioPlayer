@@ -22,6 +22,10 @@
 		CFADFCB3276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */; };
 		CFADFCB6276B86C70046E555 /* soundsample2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB4276B86C70046E555 /* soundsample2.mp3 */; };
 		CFADFCB7276B86C70046E555 /* soundsample1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB5276B86C70046E555 /* soundsample1.mp3 */; };
+		CFADFCC8276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCC7276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift */; };
+		CFADFCC9276B8A5F0046E555 /* soundsample1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB5276B86C70046E555 /* soundsample1.mp3 */; };
+		CFADFCCA276B8A5F0046E555 /* soundsample2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = CFADFCB4276B86C70046E555 /* soundsample2.mp3 */; };
+		CFADFCD1276E4AE60046E555 /* XCTestCase+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFADFCD0276E4AE60046E555 /* XCTestCase+Wait.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,8 @@
 		CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioPlayerInitializationTests.swift; sourceTree = "<group>"; };
 		CFADFCB4276B86C70046E555 /* soundsample2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundsample2.mp3; sourceTree = "<group>"; };
 		CFADFCB5276B86C70046E555 /* soundsample1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = soundsample1.mp3; sourceTree = "<group>"; };
+		CFADFCC7276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAudioPlayerTrackManagementTests.swift; sourceTree = "<group>"; };
+		CFADFCD0276E4AE60046E555 /* XCTestCase+Wait.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Wait.swift"; sourceTree = "<group>"; };
 		ECD86DE35E23905FCD3DFBA7 /* ESAudioPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ESAudioPlayer.podspec; path = ../ESAudioPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		F9BF259FC2FD033C3A026A27 /* Pods-ESAudioPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ESAudioPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-ESAudioPlayer_Example/Pods-ESAudioPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -122,11 +128,10 @@
 				607FACD71AFB9204008FA782 /* AudioPlayerViewController.swift */,
 				CFADFC3D276893E80046E555 /* AudioPlayerViewModel.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
-				CFADFCB5276B86C70046E555 /* soundsample1.mp3 */,
-				CFADFCB4276B86C70046E555 /* soundsample2.mp3 */,
-				CFADFC3F276893F70046E555 /* Helpers */,
+				607FACDC1AFB9204008FA782 /* Images.xcassets */,
+				CFADFCCD276B8AB90046E555 /* Helpers */,
+				CFADFCCC276B8AB20046E555 /* Resources */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for ESAudioPlayer";
@@ -145,7 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				CFADFCB2276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift */,
-				CFADFCAC276B7B210046E555 /* Helpers */,
+				CFADFCC7276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift */,
+				CFADFCC6276B88810046E555 /* Helpers */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -178,22 +184,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CFADFC3F276893F70046E555 /* Helpers */ = {
+		CFADFCC6276B88810046E555 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CFADFCAD276B7B8C0046E555 /* TestDummyDataGenerator.swift */,
+				CFADFCD0276E4AE60046E555 /* XCTestCase+Wait.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CFADFCCC276B8AB20046E555 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CFADFCB5276B86C70046E555 /* soundsample1.mp3 */,
+				CFADFCB4276B86C70046E555 /* soundsample2.mp3 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CFADFCCD276B8AB90046E555 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
 				CFADFC40276894090046E555 /* ViewModelType.swift */,
 				CFADFC4427689C240046E555 /* DummyDataGenerator.swift */,
 				CFADFC462768A1710046E555 /* UIImageView+SetImageFromURL.swift */,
 			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		CFADFCAC276B7B210046E555 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				CFADFCAD276B7B8C0046E555 /* TestDummyDataGenerator.swift */,
-			);
-			name = Helpers;
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +310,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFADFCC9276B8A5F0046E555 /* soundsample1.mp3 in Resources */,
+				CFADFCCA276B8A5F0046E555 /* soundsample2.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +407,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CFADFCAF276B7B9B0046E555 /* TestDummyDataGenerator.swift in Sources */,
+				CFADFCD1276E4AE60046E555 /* XCTestCase+Wait.swift in Sources */,
 				CFADFCB3276B7F9A0046E555 /* MainAudioPlayerInitializationTests.swift in Sources */,
+				CFADFCC8276B88B60046E555 /* MainAudioPlayerTrackManagementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
