@@ -1,5 +1,5 @@
 PODS:
-  - ESAudioPlayer (0.1.0):
+  - ESAudioPlayer (0.1.2):
     - RxCocoa (= 6.2.0)
     - RxSwift (= 6.2.0)
   - RxCocoa (6.2.0):
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ESAudioPlayer: 0ddf079a3be6914776fb64a16f4b6be52b6a11aa
+  ESAudioPlayer: fdb1f6bb1fa5793b13ae6cc10b282baeadbc2422
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f

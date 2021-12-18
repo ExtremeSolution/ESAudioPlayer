@@ -1,6 +1,6 @@
 {
   "name": "ESAudioPlayer",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "summary": "A reactive audio player for iOS using RxSwift",
   "description": "ESAudioPlayer is a reactive audioplayer for iOS using RxSwift. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.",
   "homepage": "https://github.com/ExtremeSolution/ESAudioPlayer",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/ExtremeSolution/ESAudioPlayer.git",
-    "tag": "0.1.0"
+    "tag": "0.1.2"
   },
   "social_media_url": "https://extremesolution.com/",
   "platforms": {
