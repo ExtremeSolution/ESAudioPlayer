@@ -992,14 +992,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		52E06FDDDB475CAEF570D746C2FB499F /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Protocols;
-			path = ESAudioPlayer/Classes/Player/Protocols;
-			sourceTree = "<group>";
-		};
 		5C98EA7F31DBC4F363C12773ADF4C13E /* RxCocoa */ = {
 			isa = PBXGroup;
 			children = (
@@ -1214,7 +1206,6 @@
 				CFADFCDD276E54760046E555 /* Model */,
 				CFADFCE4276E54760046E555 /* Helpers */,
 				F3B293826AFE03B8DF63689996CCB48A /* Pod */,
-				52E06FDDDB475CAEF570D746C2FB499F /* Protocols */,
 				C29F977841F260AB1FF1CDB69C6F2D1F /* Support Files */,
 			);
 			name = ESAudioPlayer;
