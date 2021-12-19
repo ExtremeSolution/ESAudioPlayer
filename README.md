@@ -6,7 +6,7 @@
 
 ESAudioPlayer is a reactive audio player for iOS using RxSwift. It provides basic audio management features like playing an audio from a URL. And some more advanced features like queue management, MediaPlayer transport controls and now playing center info.
 
-<img src="assets/screenshot-1.png" width="25%" /> <img src="assets/screenshot-2.png" width="25%" />
+<img src="assets/screenshot-1.png" width="25%" /> <img src="assets/screenshot-3.png" width="25%" />
 
 ## ⚙️ Features
 - [x] Completely abstracted player details, only reactive layer is exposed for use
