@@ -75,8 +75,8 @@ extension ESAudioPlayer {
             let status = loadingAsset?.statusOfValue(forKey: "playable", error: &error)
             switch status {
             case .loaded:
-                DispatchQueue.main.async {
-                    guard let asset = loadingAsset else {
+                DispatchQueue.main.async { [unowned self] in
+                    guard let asset = self.loadingAsset else {
                         self.state.accept(.stopped)
                         completion(nil)
                         return
