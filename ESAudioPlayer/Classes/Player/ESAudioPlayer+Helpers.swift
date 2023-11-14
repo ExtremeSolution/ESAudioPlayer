@@ -38,6 +38,8 @@ extension ESAudioPlayer {
         currentPlayer?.replaceCurrentItem(with: nil)
         currentPlayer?.seek(to: CMTimeMake(value: 0, timescale: 1))
         currentPlayer?.pause()
+        currentTime.accept((0, 0))
+        trackDuration.accept((0, 0))
         state.accept(.buffering)
         
         // Initialize player
@@ -84,6 +86,8 @@ extension ESAudioPlayer {
                     let item = AVPlayerItem(asset: asset)
                     completion(item)
                 }
+            case .loading, .cancelled:
+                self.state.accept(.buffering)
             default:
                 self.state.accept(.stopped)
                 completion(nil)
