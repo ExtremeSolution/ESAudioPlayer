@@ -49,7 +49,9 @@ extension ESAudioPlayer {
             .observe(\.isPlaybackBufferEmpty) { [unowned self] item, _ in
                 guard item == self.currentPlayer?.currentItem,
                       self.state.value != .stopped else { return }
-                self.state.accept(.buffering)
+                if item.isPlaybackBufferEmpty {
+                    self.state.accept(.buffering)
+                }
             }
         
         playBackLikelyToKeepUpObserver = currentPlayer?.currentItem?

@@ -24,6 +24,46 @@ extension ESAudioPlayer {
     }
     
     // MARK: - Methods
+    func initializeAVPlayerWithoutPlaying(with track: ESPlayerAudioTrack?,
+                                          completion: (() -> Void)? = nil) {
+        guard let track = track,
+              let trackURL = URL(string: track.fileURL) else { return }
+        
+        // Clear time observer from player before releasing it
+        if let currentObserver = currentPlayerTimeObserverToken {
+            currentPlayer?.removeTimeObserver(currentObserver)
+            currentPlayerTimeObserverToken = nil
+        }
+        
+        // Pause anything that's currently playing and return to start
+        currentPlayer?.replaceCurrentItem(with: nil)
+        currentPlayer?.seek(to: CMTimeMake(value: 0, timescale: 1))
+        currentPlayer?.pause()
+        currentTime.accept((0, 0))
+        trackDuration.accept((0, 0))
+        state.accept(.buffering)
+
+        // Initialize player
+        loadAsset(withTrackURL: trackURL, track: track) { [unowned self] playerItem in
+            guard let playerItem = playerItem else { return }
+            if self.currentPlayer == nil {
+                self.currentPlayer = AVPlayer(playerItem: playerItem)
+                self.currentPlayer?.allowsExternalPlayback = true
+                self.subscribeForPlayerStateUpdates()
+            } else {
+                self.currentPlayer?.replaceCurrentItem(with: playerItem)
+            }
+            // Configure player and update the state to be stopped
+            self.subscribeForTimeUpdatesAndSetDuration()
+            self.subscribeForBufferingUpdates()
+            completion?()
+            state.accept(.stopped)
+        }
+        
+        // Configure now playing center
+        self.setupNowPlayingCenter(track: track)
+    }
+    
     func initializeAVPlayerAndStartPlaying(with track: ESPlayerAudioTrack?) {
         guard let track = track,
               let trackURL = URL(string: track.fileURL) else { return }
