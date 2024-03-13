@@ -55,7 +55,7 @@ public class ESAudioPlayer: NSObject {
 extension ESAudioPlayer {
     
     /// start the player in the stopped state, list of tracks will not be played immediately
-    public func start(list: [ESPlayerAudioTrack]) {
+    public func start(list: [ESPlayerAudioTrack], completion: (() -> Void)? = nil) {
         guard !list.isEmpty else { return }
         
         // Reset playback speed
@@ -66,7 +66,7 @@ extension ESAudioPlayer {
         currentTrack.accept(list.first!)
         
         // Initialize player with first track
-        initializeAVPlayerWithoutPlaying(with: list.first)
+        initializeAVPlayerWithoutPlaying(with: list.first, completion: completion)
     }
     
     /// start the player in the playing state, track will  be played immediately

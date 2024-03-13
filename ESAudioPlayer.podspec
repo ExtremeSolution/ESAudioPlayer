@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ESAudioPlayer'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'A reactive audio player for iOS using RxSwift'
 
 # This description is used to generate tags and improve search results.
