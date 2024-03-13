@@ -53,6 +53,23 @@ public class ESAudioPlayer: NSObject {
 
 // MARK: - Track Management Methods
 extension ESAudioPlayer {
+    
+    /// start the player in the stopped state, list of tracks will not be played immediately
+    public func start(list: [ESPlayerAudioTrack]) {
+        guard !list.isEmpty else { return }
+        
+        // Reset playback speed
+        currentSpeed.accept(.normal)
+        
+        // Update public properties
+        queue.accept(list)
+        currentTrack.accept(list.first!)
+        
+        // Initialize player with first track
+        initializeAVPlayerWithoutPlaying(with: list.first)
+    }
+    
+    /// start the player in the playing state, track will  be played immediately
     public func play(track: ESPlayerAudioTrack) {
         // Make sure the track is not already playing
         guard track != currentTrack.value else { return }
@@ -77,6 +94,7 @@ extension ESAudioPlayer {
         }
     }
     
+    /// start the player in the playing state, list of tracks will  be played immediately
     public func play(list: [ESPlayerAudioTrack]) {
         guard !list.isEmpty else { return }
         
