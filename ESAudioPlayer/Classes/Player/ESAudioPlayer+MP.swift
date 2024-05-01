@@ -62,10 +62,20 @@ extension ESAudioPlayer {
         // Set the metadata
         MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
         
-        // Download image & reset the meta data
-        downloadTrackArtwork(stringURL: track.imageURL) { artwork in
+        if let imageData = track.imageData,
+                  let image = UIImage(data: imageData) {
+            // Assign image & reset the meta data
+            let artwork = MPMediaItemArtwork(boundsSize: image.size, requestHandler: { _ -> UIImage in
+                return image
+            })
             nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
             MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+        } else if let imageURL = track.imageURL {
+            // Download image & reset the meta data
+            downloadTrackArtwork(stringURL: track.imageURL) { artwork in
+                nowPlayingInfo[MPMediaItemPropertyArtwork] = artwork
+                MPNowPlayingInfoCenter.default().nowPlayingInfo = nowPlayingInfo
+            }
         }
         
         // Enable/disable next button
@@ -81,7 +91,7 @@ extension ESAudioPlayer {
     }
     
     private func downloadTrackArtwork(stringURL: String?, completion: @escaping (MPMediaItemArtwork?) -> Void) {
-        // Cancel existing image downlaod task if there
+        // Cancel existing image download task if there
         imageDownloadDataTask?.cancel()
         
         guard let stringURL = stringURL else {
