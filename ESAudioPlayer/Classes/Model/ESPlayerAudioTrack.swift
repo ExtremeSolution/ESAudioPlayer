@@ -18,6 +18,7 @@ public struct ESPlayerAudioTrack: Equatable {
     public let fileURL: String
     public let artists: [ESPlayerArtist]?
     public let subtitle: String
+    public let type: ESTrackType
     
     // MARK: - Calculated properties
     /// Reduces the list of artists into a single combined string
@@ -38,7 +39,8 @@ public struct ESPlayerAudioTrack: Equatable {
         imageData: Data?,
         fileURL: String,
         artists: [ESPlayerArtist]?,
-        subtitle: String
+        subtitle: String,
+        type: ESTrackType
     ) {
         self.id = id
         self.name = name
@@ -47,5 +49,11 @@ public struct ESPlayerAudioTrack: Equatable {
         self.fileURL = fileURL
         self.artists = artists
         self.subtitle = subtitle
+        self.type = type
     }
+}
+
+public enum ESTrackType {
+    case track
+    case episode
 }
