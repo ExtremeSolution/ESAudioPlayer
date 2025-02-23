@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ESAudioPlayer'
-  s.version          = '0.1.10'
+  s.version          = '0.1.11'
   s.summary          = 'A reactive audio player for iOS using RxSwift'
 
 # This description is used to generate tags and improve search results.
@@ -29,13 +29,13 @@ ESAudioPlayer is a reactive audioplayer for iOS using RxSwift. It provides basic
   s.social_media_url = 'https://extremesolution.com/'
 
   s.ios.deployment_target = '15.0'
-  s.platform = :ios, "13.0"
+  s.platform = :ios, "15.0"
   s.swift_version = '5.0'
 
   s.source_files = 'ESAudioPlayer/Classes/**/*'
   s.frameworks = 'AVFoundation'
-  s.dependency 'RxSwift', '6.2.0'
-  s.dependency 'RxCocoa', '6.2.0'
+  s.dependency 'RxSwift', '6.9.0'
+  s.dependency 'RxCocoa', '6.9.0'
   
   # s.resource_bundles = {
   #   'ESAudioPlayer' => ['ESAudioPlayer/Assets/*.png']
