@@ -122,7 +122,7 @@ extension ESAudioPlayer {
             switch status {
             case .loaded:
                 DispatchQueue.main.async {
-                    guard let asset = loadingAsset else {
+                    guard let asset = self.loadingAsset else {
                         self.state.accept(.stopped)
                         completion(nil)
                         return
