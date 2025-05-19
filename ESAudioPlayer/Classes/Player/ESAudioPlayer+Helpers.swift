@@ -107,12 +107,12 @@ extension ESAudioPlayer {
                            track: ESPlayerAudioTrack,
                            completion: @escaping (AVPlayerItem?) -> Void) {
         // Cancel already loading asset if it exists
-        loadingAsset?.cancelLoading()
+        self.loadingAsset?.cancelLoading()
         
         // Initialize new asset and start loading it
-        loadingAsset = AVAsset(url: trackURL)
+        self.loadingAsset = AVAsset(url: trackURL)
         let keys: [String] = ["playable"]
-        loadingAsset?.loadValuesAsynchronously(forKeys: keys) { [weak self] in
+        self.loadingAsset?.loadValuesAsynchronously(forKeys: keys) { [weak self] in
             guard let self else {
                 completion(nil)
                 return
