@@ -99,6 +99,8 @@ extension ESAudioPlayer {
             let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
             if options.contains(.shouldResume) {
                 // An interruption ended. Resume playback.
+                // Activate and configure the session before resuming to prevent deactivation from inactivity.
+                configureAudioSession()
                 resume()
             }
         default: ()
