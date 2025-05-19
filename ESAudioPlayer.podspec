@@ -31,7 +31,9 @@ ESAudioPlayer is a reactive audioplayer for iOS using RxSwift. It provides basic
   s.ios.deployment_target = '15.0'
   s.platform = :ios, "15.0"
   s.swift_version = '5.0'
-
+  s.pod_target_xcconfig = {
+    'SWIFT_VERSION' => '5.0'
+  }
   s.source_files = 'ESAudioPlayer/Classes/**/*'
   s.frameworks = 'AVFoundation'
   s.dependency 'RxSwift', '6.9.0'
