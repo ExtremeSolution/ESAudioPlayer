@@ -118,7 +118,7 @@ extension ESAudioPlayer {
                 return
             }
             var error: NSError?
-            let status = loadingAsset?.statusOfValue(forKey: "playable", error: &error)
+            let status = self.loadingAsset?.statusOfValue(forKey: "playable", error: &error)
             switch status {
             case .loaded:
                 DispatchQueue.main.async {
