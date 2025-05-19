@@ -12,29 +12,41 @@ import RxCocoa
 // MARK: - Player Update Subscriptions
 extension ESAudioPlayer {
     func subscribeForTimeUpdatesAndSetDuration() {
-        trackDuration.accept(currentPlayer?.currentItem?.asset.duration.seconds.toMinutesAndSeconds() ?? (0, 0))
+        if let durationSeconds = currentPlayer?.currentItem?.asset.duration.seconds,
+           durationSeconds.isFinite, !durationSeconds.isNaN {
+            trackDuration.accept(durationSeconds.toMinutesAndSeconds())
+        } else {
+            trackDuration.accept((0, 0))
+        }
+        
         currentPlayerTimeObserverToken = currentPlayer?
-            .addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 5), queue: .main, using: { _ in
-                // Update current time
-                self.currentTime.accept(self.currentPlayer?.currentTime().seconds.toMinutesAndSeconds() ?? (0, 0))
+            .addPeriodicTimeObserver(forInterval: CMTimeMake(value: 1, timescale: 5), queue: .main, using: { [weak self] _ in
+                guard let self = self else { return }
                 
-                // Update track duration if changed
-                let currentDuration = self.trackDuration.value
-                let trackDurationValue = self.currentPlayer?.currentItem?.asset
-                    .duration.seconds.toMinutesAndSeconds() ?? (0, 0)
-                if currentDuration != trackDurationValue {
-                    self.trackDuration.accept(trackDurationValue)
+                if let currentSeconds = self.currentPlayer?.currentTime().seconds,
+                   currentSeconds.isFinite, !currentSeconds.isNaN {
+                    self.currentTime.accept(currentSeconds.toMinutesAndSeconds())
                 }
                 
-                // Update info center
+                // update track duration if it changes
+                let currentDuration = self.trackDuration.value
+                if let durationSeconds = self.currentPlayer?.currentItem?.asset.duration.seconds,
+                   durationSeconds.isFinite, !durationSeconds.isNaN {
+                    let newDuration = durationSeconds.toMinutesAndSeconds()
+                    if currentDuration != newDuration {
+                        self.trackDuration.accept(newDuration)
+                    }
+                }
+                
+                // update Now Playing Info Center
                 if let elapsedPlaybackTime = self.currentPlayer?.currentTime().seconds,
                    let trackDuration = self.currentPlayer?.currentItem?.asset.duration.seconds,
-                   !trackDuration.isNaN,
-                   elapsedPlaybackTime.isFinite, elapsedPlaybackTime.isNormal {
+                   elapsedPlaybackTime.isFinite, !elapsedPlaybackTime.isNaN,
+                   trackDuration.isFinite, !trackDuration.isNaN {
                     self.updateNowPlayingCenterTimes(elapsedPlaybackTime: Int(elapsedPlaybackTime),
                                                      trackDurationTime: Int(trackDuration))
                 }
-        })
+            })
     }
     
     func subscribeForPlayerStateUpdates() {

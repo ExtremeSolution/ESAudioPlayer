@@ -9,6 +9,8 @@ import Foundation
 
 extension Double {
     func toMinutesAndSeconds() -> (minutes: Int, seconds: Int) {
+        guard self.isFinite, !self.isNaN, self >= 0 else { return (0, 0) }
+
         let totalSeconds = Int(self)
         let minutes = totalSeconds / 60
         let remainingSeconds = totalSeconds % 60

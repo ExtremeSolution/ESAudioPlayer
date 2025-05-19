@@ -134,7 +134,8 @@ extension ESAudioPlayer {
     
     public func previous() {
         // Play from start if it's more than 5 seconds in
-        guard currentPlayer?.currentTime().seconds ?? 0 < 5 else {
+        guard let time = currentPlayer?.currentTime().seconds,
+              !time.isNaN, time.isFinite, time < 5 else {
             currentPlayer?.seek(to: CMTimeMake(value: 0, timescale: 1))
             return
         }
