@@ -45,7 +45,7 @@ public class ESAudioPlayer: NSObject {
         setupRemoteTransportControls()
     }
     
-    private func configureAudioSession() {
+    func configureAudioSession() {
         try? audioSession.setCategory(.playback)
         try? audioSession.setMode(.spokenAudio)
         try? audioSession.setActive(true)

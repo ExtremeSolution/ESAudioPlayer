@@ -112,7 +112,11 @@ extension ESAudioPlayer {
         // Initialize new asset and start loading it
         loadingAsset = AVAsset(url: trackURL)
         let keys: [String] = ["playable"]
-        loadingAsset?.loadValuesAsynchronously(forKeys: keys) { [unowned self] in
+        loadingAsset?.loadValuesAsynchronously(forKeys: keys) { [weak self] in
+            guard let self else {
+                completion(nil)
+                return
+            }
             var error: NSError?
             let status = loadingAsset?.statusOfValue(forKey: "playable", error: &error)
             switch status {
