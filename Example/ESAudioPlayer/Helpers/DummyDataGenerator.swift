@@ -15,6 +15,7 @@ class DummyDataGenerator {
             id: 1,
             name: "Believe",
             imageURL: "https://i.imgur.com/GrkPDIK.jpg",
+            imageData: nil,
             fileURL: Bundle.main.url(
                 forResource: "soundsample1",
                 withExtension: "mp3"
@@ -26,12 +27,15 @@ class DummyDataGenerator {
                     description: "",
                     imageURL: ""
                 )
-            ]
+            ],
+            subtitle: "",
+            type: .track
         ),
         ESPlayerAudioTrack(
             id: 2,
             name: "Trust",
             imageURL: "https://i.redd.it/8atdz8vki3q11.png",
+            imageData: nil,
             fileURL: Bundle.main.url(
                 forResource: "soundsample2",
                 withExtension: "mp3"
@@ -43,7 +47,9 @@ class DummyDataGenerator {
                     description: "",
                     imageURL: ""
                 )
-            ]
+            ],
+            subtitle: "",
+            type: .track
         )
     ]
 }

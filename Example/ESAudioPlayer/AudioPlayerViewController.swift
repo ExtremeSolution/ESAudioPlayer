@@ -61,7 +61,7 @@ class AudioPlayerViewController: UIViewController {
         viewModel.output.currentTrack.drive(onNext: { [unowned self] track in
             self.trackNameLabel.text = track.name
             self.artistsNamesLabel.text = track.combinedArtistsString
-            if let url = URL(string: track.imageURL) {
+            if let url = URL(string: track.imageURL ?? "") {
                 self.coverImageView.setImage(fromURL: url)
             }
         }).disposed(by: disposeBag)

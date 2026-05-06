@@ -10,11 +10,19 @@ import Foundation
 import ESAudioPlayer
 
 internal class TestDummyDataGenerator {
+    
+    #if SWIFT_PACKAGE
+    private static let bundle = Bundle.module
+    #else
+    private static let bundle = Bundle(for: TestDummyDataGenerator.self)
+    #endif
+
     static let genericTrack = ESPlayerAudioTrack(
         id: 1,
         name: "TrackName",
         imageURL: "ImageURL",
-        fileURL: Bundle.main.url(
+        imageData: nil,
+        fileURL: bundle.url(
             forResource: "soundsample1",
             withExtension: "mp3"
         )!.absoluteString,
@@ -25,7 +33,9 @@ internal class TestDummyDataGenerator {
                 description: "ArtistDescription",
                 imageURL: "ArtistImageURL"
             )
-        ]
+        ],
+        subtitle: "",
+        type: .track
     )
     
     static let genericTracksList: [ESPlayerAudioTrack] = [
@@ -33,7 +43,8 @@ internal class TestDummyDataGenerator {
             id: 1,
             name: "TrackName1",
             imageURL: "ImageURL1",
-            fileURL: Bundle.main.url(
+            imageData: nil,
+            fileURL: bundle.url(
                 forResource: "soundsample1",
                 withExtension: "mp3"
             )!.absoluteString,
@@ -44,13 +55,16 @@ internal class TestDummyDataGenerator {
                     description: "ArtistDescription1",
                     imageURL: "ArtistImageURL1"
                 )
-            ]
+            ],
+            subtitle: "",
+            type: .track
         ),
         ESPlayerAudioTrack(
             id: 2,
             name: "TrackName2",
             imageURL: "ImageURL2",
-            fileURL: Bundle.main.url(
+            imageData: nil,
+            fileURL: bundle.url(
                 forResource: "soundsample2",
                 withExtension: "mp3"
             )!.absoluteString,
@@ -61,7 +75,9 @@ internal class TestDummyDataGenerator {
                     description: "ArtistDescription2",
                     imageURL: "ArtistImageURL2"
                 )
-            ]
+            ],
+            subtitle: "",
+            type: .track
         )
     ]
 }
